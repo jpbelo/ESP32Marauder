@@ -1,10 +1,4 @@
 #include "stampS3LED.h"
-#include <FastLED.h>
-
-#define STAMP_S3_LED_PIN 21
-#define NUM_LEDS 1
-
-CRGB leds[NUM_LEDS];
 
 void stampS3LED::RunSetup() {
   FastLED.addLeds<WS2812, STAMP_S3_LED_PIN, GRB>(leds, NUM_LEDS);
