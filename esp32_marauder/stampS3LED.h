@@ -5,10 +5,10 @@
 #include "settings.h"
 
 #include <Arduino.h>
-// #include <FastLED.h>
+#include <FastLED.h>
 
-// #define STAMP_S3_LED_PIN 21
-// #define NUM_LEDS 1
+#define STAMP_S3_LED_PIN 21
+#define NUM_LEDS 1
 
 // CRGB leds[NUM_LEDS];
 
