@@ -1,19 +1,19 @@
 #include "stampS3LED.h"
-#include <FastLED.h>
+// #include <FastLED.h>
 
 void stampS3LED::RunSetup() {
-  FastLED.addLeds<WS2812, STAMP_S3_LED_PIN, GRB>(leds, NUM_LEDS);
+  // FastLED.addLeds<WS2812, STAMP_S3_LED_PIN, GRB>(leds, NUM_LEDS);
 
-  leds[0] = CHSV(0, 255, 255);
-  FastLED.show();
-  delay(500);
+  // leds[0] = CHSV(0, 255, 255);
+  // FastLED.show();
+  // delay(500);
 
-  leds[0] = CHSV(0, 0, 255);
-  FastLED.show();
-  delay(500);
+  // leds[0] = CHSV(0, 0, 255);
+  // FastLED.show();
+  // delay(500);
 
-  leds[0] = CHSV(255, 0, 255);
-  FastLED.show();
+  // leds[0] = CHSV(255, 0, 255);
+  // FastLED.show();
 
   // pinMode(B_PIN, OUTPUT);
   // pinMode(G_PIN, OUTPUT);
