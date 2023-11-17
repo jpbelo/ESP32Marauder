@@ -147,19 +147,20 @@ jobs:
           
       - name: Configure configs.h for Flipper Zero WiFi Dev Board
         run: |
-          sed -i 's/^ #define MARAUDER_M5STICKC/ \/\/MARAUDER_M5STICKC/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_MINI/ \/\/MARAUDER_MINI/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_V4/ \/\/MARAUDER_V4/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_V6/ \/\/MARAUDER_V6/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_V6_1/ \/\/MARAUDER_V6_1/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_KIT/ \/\/MARAUDER_KIT/' esp32_marauder/configs.h
-          sed -i 's/^ #define GENERIC_ESP32/ \/\/GENERIC_ESP32/' esp32_marauder/configs.h
-          sed -i 's/^ \/\/#define MARAUDER_FLIPPER/ MARAUDER_FLIPPER/' esp32_marauder/configs.h
-          sed -i 's/^ #define ESP32_LDDB/ \/\/ESP32_LDDB/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_DEV_BOARD_PRO/ \/\/MARAUDER_DEV_BOARD_PRO/' esp32_marauder/configs.h
-          sed -i 's/^ #define XIAO_ESP32_S3/ \/\/XIAO_ESP32_S3/' esp32_marauder/configs.h
+          sed -i 's/^ #define MARAUDER_M5STICKC/ \/\/#define MARAUDER_M5STICKC/' esp32_marauder/configs.h
+          sed -i 's/^ #define MARAUDER_MINI/ \/\/#define MARAUDER_MINI/' esp32_marauder/configs.h
+          sed -i 's/^ #define MARAUDER_V4/ \/\/#define MARAUDER_V4/' esp32_marauder/configs.h
+          sed -i 's/^ #define MARAUDER_V6/ \/\/#define MARAUDER_V6/' esp32_marauder/configs.h
+          sed -i 's/^ #define MARAUDER_V6_1/ \/\/#define MARAUDER_V6_1/' esp32_marauder/configs.h
+          sed -i 's/^ #define MARAUDER_KIT/ \/\/#define MARAUDER_KIT/' esp32_marauder/configs.h
+          sed -i 's/^ #define GENERIC_ESP32/ \/\/#define GENERIC_ESP32/' esp32_marauder/configs.h
+          sed -i 's/^ \/\/#define MARAUDER_FLIPPER/ #define MARAUDER_FLIPPER/' esp32_marauder/configs.h
+          sed -i 's/^ #define ESP32_LDDB/ \/\/#define ESP32_LDDB/' esp32_marauder/configs.h
+          sed -i 's/^ #define MARAUDER_DEV_BOARD_PRO/ \/\/#define MARAUDER_DEV_BOARD_PRO/' esp32_marauder/configs.h
+          sed -i 's/^ #define XIAO_ESP32_S3/ \/\/#define XIAO_ESP32_S3/' esp32_marauder/configs.h
 
 
+          
 
       # ------------- BUILD -------------
 
