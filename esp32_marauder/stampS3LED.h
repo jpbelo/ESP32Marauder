@@ -5,15 +5,12 @@
 #include "settings.h"
 
 #include <Arduino.h>
-#include <FastLED.h>
+// #include <FastLED.h>
 
-#define STAMP_S3_LED_PIN 21
-#define NUM_LEDS 1
+// #define STAMP_S3_LED_PIN 21
+// #define NUM_LEDS 1
 
-CRGB leds[NUM_LEDS];
-// #define B_PIN 4
-// #define G_PIN 5
-// #define R_PIN 6
+// CRGB leds[NUM_LEDS];
 
 extern Settings settings_obj;
 
