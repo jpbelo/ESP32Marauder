@@ -687,6 +687,10 @@
       #define SD_CS -1
     #endif
 
+    #ifdef MARAUDER_M5STAMP_S3
+      #define SD_CS 10
+    #endif
+
     #ifdef MARAUDER_FLIPPER
       #define SD_CS 10
     #endif
