@@ -36,7 +36,7 @@ https://www.online-utility.org/image/convert/to/XBM
 #include "Buffer.h"
 
 #ifdef MARAUDER_M5STAMP_S3
-  #include "flipperLED.h"
+  #include "stampS3LED.h"
 #elif defined(MARAUDER_FLIPPER)
   #include "flipperLED.h"
 #elif defined(XIAO_ESP32_S3)
@@ -122,7 +122,7 @@ CommandLine cli_obj;
 #endif
 
 #ifdef MARAUDER_M5STAMP_S3
-  flipperLED flipper_led;
+  stampS3LED stamps3_led;
 #elif defined(MARAUDER_FLIPPER)
   flipperLED flipper_led;
 #elif defined(XIAO_ESP32_S3)
