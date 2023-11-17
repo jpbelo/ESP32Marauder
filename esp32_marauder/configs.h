@@ -134,11 +134,11 @@
     //#define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
-    #define HAS_GPS
-    #ifndef WRITE_PACKETS_SERIAL
-      #define HAS_SD
-      #define USE_SD
-    #endif
+    // #define HAS_GPS
+    // #ifndef WRITE_PACKETS_SERIAL
+    //   #define HAS_SD
+    //   #define USE_SD
+    // #endif
     //#define HAS_TEMP_SENSOR
   #endif
 
