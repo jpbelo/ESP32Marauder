@@ -6,6 +6,7 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
+  # This workflow contains a single job called "build"
   build:
     name: Build Marauder Binaries
     
@@ -180,23 +181,6 @@ jobs:
             cat "$i" | grep compiler.c.elf.libs.esp32
           done
           
-      - name: Configure configs.h for Flipper Zero WiFi Dev Board
-        run: |
-          sed -i 's/^ #define MARAUDER_M5STICKC/ \/\/#define MARAUDER_M5STICKC/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_MINI/ \/\/#define MARAUDER_MINI/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_V4/ \/\/#define MARAUDER_V4/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_V6/ \/\/#define MARAUDER_V6/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_V6_1/ \/\/#define MARAUDER_V6_1/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_KIT/ \/\/#define MARAUDER_KIT/' esp32_marauder/configs.h
-          sed -i 's/^ #define GENERIC_ESP32/ \/\/#define GENERIC_ESP32/' esp32_marauder/configs.h
-          sed -i 's/^ \/\/#define MARAUDER_FLIPPER/ #define MARAUDER_FLIPPER/' esp32_marauder/configs.h
-          sed -i 's/^ #define ESP32_LDDB/ \/\/#define ESP32_LDDB/' esp32_marauder/configs.h
-          sed -i 's/^ #define MARAUDER_DEV_BOARD_PRO/ \/\/#define MARAUDER_DEV_BOARD_PRO/' esp32_marauder/configs.h
-          sed -i 's/^ #define XIAO_ESP32_S3/ \/\/#define XIAO_ESP32_S3/' esp32_marauder/configs.h
-          
-
-      # ------------- BUILD -------------
-
       - name: Build Marauder for Flipper Zero Multi Board
         uses: ArminJo/arduino-test-compile@v3.2.1
         with:
@@ -207,66 +191,38 @@ jobs:
       - name: Rename Marauder Multi Board bin
         run: |
           mv ./esp32_marauder/build/esp32.esp32.esp32s3/esp32_marauder.ino.bin ./esp32_marauder/build/esp32.esp32.esp32s3/esp32_marauder.multiboardS3.bin
-         
-
-
-
-
-
-
-
 
       - name: Display finished bins
         run: |
           find ./esp32_marauder/build -name "*.bin"
-
-
-
-
-
-      # ------------- UPLOAD ARTIFACTS -------------
-
+          
       - name: 'Upload MultiboardS3 Artifact'
         uses: actions/upload-artifact@v3
         with:
           name: esp32_marauder.multiboardS3.bin
           path: ./esp32_marauder/build/esp32.esp32.esp32s3/esp32_marauder.multiboardS3.bin
           retention-days: 5
-
-
-
-
-
-
-      # # ------------- RELEASE -------------
-
-      # - name: Create Release
-      #   id: create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     tag_name: ${{ github.ref }}
-      #     release_name: Release ${{ github.ref }}
-      #     draft: true
-      #     prerelease: false
-      #   if: github.event_name != 'pull_request'
           
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: false
+        if: github.event_name != 'pull_request'
 
-
-
-
-      # # ------------- UPLOAD ASSET -------------
-
-      # - name: Upload MultiboardS3 Asset
-      #   id: upload-multiboardS3-release-asset 
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: ./esp32_marauder/build/esp32.esp32.esp32s3/esp32_marauder.multiboardS3.bin
-      #     asset_name: esp32_marauder.multiboardS3.bin
-      #     asset_content_type: application/bin
-      #   if: github.event_name != 'pull_request'
-          
+      - name: Upload MultiboardS3 Asset
+        id: upload-multiboardS3-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./esp32_marauder/build/esp32.esp32.esp32s3/esp32_marauder.multiboardS3.bin
+          asset_name: esp32_marauder.multiboardS3.bin
+          asset_content_type: application/bin
+        if: github.event_name != 'pull_request'
