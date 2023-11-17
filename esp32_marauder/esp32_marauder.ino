@@ -22,6 +22,7 @@ https://www.online-utility.org/image/convert/to/XBM
 #include "freertos/task.h"
 #include "esp_system.h"
 #include <Arduino.h>
+#include <FastLED.h>
 
 #ifdef HAS_GPS
   #include "GpsInterface.h"
