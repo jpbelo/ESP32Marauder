@@ -1,59 +1,68 @@
 #include "stampS3LED.h"
 
 void stampS3LED::RunSetup() {
-  pinMode(B_PIN, OUTPUT);
-  pinMode(G_PIN, OUTPUT);
-  pinMode(R_PIN, OUTPUT);
+  // pinMode(B_PIN, OUTPUT);
+  // pinMode(G_PIN, OUTPUT);
+  // pinMode(R_PIN, OUTPUT);
+  pinMode(LED_PIN, OUTPUT);
+  
+  digitalWrite(LED_PIN, LOW);
+  delay(500);
+  digitalWrite(LED_PIN, HIGH);
+  delay(500);
+  digitalWrite(LED_PIN, LOW);
+  delay(500);
+  digitalWrite(LED_PIN, HIGH);
 
-  if (!settings_obj.loadSetting<bool>("EnableLED")) {
-    digitalWrite(B_PIN, HIGH);
-    digitalWrite(G_PIN, HIGH);
-    digitalWrite(R_PIN, HIGH);
-    return;
-  }
+  // if (!settings_obj.loadSetting<bool>("EnableLED")) {
+  //   digitalWrite(B_PIN, HIGH);
+  //   digitalWrite(G_PIN, HIGH);
+  //   digitalWrite(R_PIN, HIGH);
+  //   return;
+  // }
     
-  delay(50);
+  // delay(50);
 
-  digitalWrite(B_PIN, LOW);
-  delay(500);
-  digitalWrite(B_PIN, HIGH);
-  digitalWrite(G_PIN, LOW);
-  delay(500);
-  digitalWrite(G_PIN, HIGH);
-  digitalWrite(R_PIN, LOW);
-  delay(500);
-  digitalWrite(R_PIN, HIGH);
+  // digitalWrite(B_PIN, LOW);
+  // delay(500);
+  // digitalWrite(B_PIN, HIGH);
+  // digitalWrite(G_PIN, LOW);
+  // delay(500);
+  // digitalWrite(G_PIN, HIGH);
+  // digitalWrite(R_PIN, LOW);
+  // delay(500);
+  // digitalWrite(R_PIN, HIGH);
 }
 
 void stampS3LED::attackLED() {
-  if (!settings_obj.loadSetting<bool>("EnableLED"))
-    return;
+  // if (!settings_obj.loadSetting<bool>("EnableLED"))
+  //   return;
     
-  digitalWrite(B_PIN, HIGH);
-  digitalWrite(G_PIN, HIGH);
-  digitalWrite(R_PIN, HIGH); 
-  delay(10);
-  digitalWrite(R_PIN, LOW);
+  // digitalWrite(B_PIN, HIGH);
+  // digitalWrite(G_PIN, HIGH);
+  // digitalWrite(R_PIN, HIGH); 
+  // delay(10);
+  // digitalWrite(R_PIN, LOW);
 }
 
 void stampS3LED::sniffLED() {
-  if (!settings_obj.loadSetting<bool>("EnableLED"))
-    return;
+  // if (!settings_obj.loadSetting<bool>("EnableLED"))
+  //   return;
     
-  digitalWrite(B_PIN, HIGH);
-  digitalWrite(G_PIN, HIGH);
-  digitalWrite(R_PIN, HIGH);
-  delay(10);
-  digitalWrite(B_PIN, LOW);
+  // digitalWrite(B_PIN, HIGH);
+  // digitalWrite(G_PIN, HIGH);
+  // digitalWrite(R_PIN, HIGH);
+  // delay(10);
+  // digitalWrite(B_PIN, LOW);
 }
 
 void stampS3LED::offLED() {
-  if (!settings_obj.loadSetting<bool>("EnableLED"))
-    return;
+  // if (!settings_obj.loadSetting<bool>("EnableLED"))
+  //   return;
     
-  digitalWrite(B_PIN, HIGH);
-  digitalWrite(G_PIN, HIGH);
-  digitalWrite(R_PIN, HIGH);
+  // digitalWrite(B_PIN, HIGH);
+  // digitalWrite(G_PIN, HIGH);
+  // digitalWrite(R_PIN, HIGH);
 }
 
 void stampS3LED::main() {
