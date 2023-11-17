@@ -4,15 +4,6 @@ void stampS3LED::RunSetup() {
   // pinMode(B_PIN, OUTPUT);
   // pinMode(G_PIN, OUTPUT);
   // pinMode(R_PIN, OUTPUT);
-  pinMode(LED_PIN, OUTPUT);
-  
-  digitalWrite(LED_PIN, LOW);
-  delay(500);
-  digitalWrite(LED_PIN, HIGH);
-  delay(500);
-  digitalWrite(LED_PIN, LOW);
-  delay(500);
-  digitalWrite(LED_PIN, HIGH);
 
   // if (!settings_obj.loadSetting<bool>("EnableLED")) {
   //   digitalWrite(B_PIN, HIGH);
