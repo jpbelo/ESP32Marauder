@@ -120,6 +120,13 @@ jobs:
           ref: 8.1.0
           path: CustomEspSoftwareSerial
           
+      - name: Install FastLED
+        uses: actions/checkout@v2
+        with:
+          repository: FastLED/FastLED
+          ref: 3.6.0
+          path: FastLED
+          
       - name: Configure TFT_eSPI
         run: |
           rm -f CustomTFT_eSPI/User_Setup_Select.h

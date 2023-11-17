@@ -6,7 +6,6 @@ https://www.online-utility.org/image/convert/to/XBM
 */
 
 #include "configs.h"
-#define LED_PIN 21
 #ifndef HAS_SCREEN
   #define MenuFunctions_h
   #define Display_h
@@ -169,16 +168,6 @@ void backlightOff() {
 
 void setup()
 {
-  pinMode(LED_PIN, OUTPUT);
-  
-  digitalWrite(LED_PIN, LOW);
-  delay(500);
-  digitalWrite(LED_PIN, HIGH);
-  delay(500);
-  digitalWrite(LED_PIN, LOW);
-  delay(500);
-  digitalWrite(LED_PIN, HIGH);
-
   #ifdef MARAUDER_M5STICKC
     axp192_obj.begin();
   #endif
