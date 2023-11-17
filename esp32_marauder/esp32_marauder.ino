@@ -344,7 +344,7 @@ void setup()
 
   // Do some LED stuff
   #ifdef MARAUDER_M5STAMP_S3
-    flipper_led.RunSetup();
+    stamps3_led.RunSetup();
   #elif defined(MARAUDER_FLIPPER)
     flipper_led.RunSetup();
   #elif defined(XIAO_ESP32_S3)
@@ -444,7 +444,7 @@ void loop()
     //cli_obj.main(currentTime);
   }
   #ifdef MARAUDER_M5STAMP_S3
-    flipper_led.main();
+    stamps3_led.main();
   #elif defined(MARAUDER_FLIPPER)
     flipper_led.main();
   #elif defined(XIAO_ESP32_S3)
