@@ -748,6 +748,8 @@
     #define MEM_LOWER_LIM 20000
   #elif defined(MARAUDER_FLIPPER)
     #define MEM_LOWER_LIM 20000
+  #elif defined(MARAUDER_M5STAMP_S3)
+    #define MEM_LOWER_LIM 20000
   #elif defined(ESP32_LDDB)
     #define MEM_LOWER_LIM 20000
   #elif defined(MARAUDER_DEV_BOARD_PRO)
@@ -795,6 +797,8 @@
     #define MAX_HTML_SIZE 20000
   #elif defined(MARAUDER_FLIPPER)
     #define MAX_HTML_SIZE 20000
+  #elif defined(MARAUDER_M5STAMP_S3)
+    #define MAX_HTML_SIZE 20000
   #elif defined(ESP32_LDDB)
     #define MAX_HTML_SIZE 20000
   #elif defined(MARAUDER_DEV_BOARD_PRO)
@@ -834,6 +838,15 @@
       #define GPS_RX 22
       #define mac_history_len 512
     #elif defined(MARAUDER_FLIPPER)
+      #ifdef WRITE_PACKETS_SERIAL
+        #define GPS_SOFTWARE_SERIAL
+      #else
+        #define GPS_SERIAL_INDEX 1
+      #endif
+      #define GPS_TX 9
+      #define GPS_RX 21
+      #define mac_history_len 512
+    #elif defined(MARAUDER_M5STAMP_S3)
       #ifdef WRITE_PACKETS_SERIAL
         #define GPS_SOFTWARE_SERIAL
       #else
