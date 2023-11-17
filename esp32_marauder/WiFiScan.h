@@ -33,7 +33,7 @@
 #include "settings.h"
 #include "Assets.h"
 #ifdef MARAUDER_M5STAMP_S3
-  #include "flipperLED.h"
+  #include "stampS3LED.h"
 #elif defined(MARAUDER_FLIPPER)
   #include "flipperLED.h"
 #elif defined(XIAO_ESP32_S3)
@@ -110,7 +110,7 @@ extern Buffer buffer_obj;
 #endif
 extern Settings settings_obj;
 #ifdef MARAUDER_M5STAMP_S3
-  extern flipperLED flipper_led;
+  extern stampS3LED stamps3_led;
 #elif defined(MARAUDER_FLIPPER)
   extern flipperLED flipper_led;
 #elif defined(XIAO_ESP32_S3)
