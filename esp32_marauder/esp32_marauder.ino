@@ -6,6 +6,7 @@ https://www.online-utility.org/image/convert/to/XBM
 */
 
 #include "configs.h"
+
 #ifndef HAS_SCREEN
   #define MenuFunctions_h
   #define Display_h
