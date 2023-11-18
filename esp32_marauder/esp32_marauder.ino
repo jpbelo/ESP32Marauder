@@ -24,6 +24,8 @@ https://www.online-utility.org/image/convert/to/XBM
 #include "esp_system.h"
 #include <Arduino.h>
 
+#include <Adafruit_NeoPixel.h>
+
 #ifdef HAS_GPS
   #include "GpsInterface.h"
 #endif
@@ -92,6 +94,7 @@ Buffer buffer_obj;
 //EspInterface esp_obj;
 Settings settings_obj;
 CommandLine cli_obj;
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(1, 21, NEO_GRB + NEO_KHZ800);
 
 #ifdef HAS_GPS
   GpsInterface gps_obj;
@@ -169,6 +172,19 @@ void setup()
     axp192_obj.begin();
   #endif
   
+
+  strip.setBrightness(0);
+  strip.begin();
+
+  strip.setPixelColor(0, strip.Color(0, 0, 0));
+  strip.show();
+
+  delay(200);
+
+  strip.setBrightness(50);
+  strip.setPixelColor(0, strip.Color(22, 222, 0));
+  strip.show();
+
   //pinMode(FLASH_BUTTON, INPUT);
 
   #ifdef HAS_SCREEN
