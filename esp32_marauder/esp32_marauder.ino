@@ -34,9 +34,7 @@ https://www.online-utility.org/image/convert/to/XBM
 #endif
 #include "Buffer.h"
 
-#ifdef MARAUDER_M5STAMP_S3
-  #include "stampS3LED.h"
-#elif defined(MARAUDER_FLIPPER)
+#ifdef MARAUDER_FLIPPER
   #include "flipperLED.h"
 #elif defined(XIAO_ESP32_S3)
   #include "xiaoLED.h"
