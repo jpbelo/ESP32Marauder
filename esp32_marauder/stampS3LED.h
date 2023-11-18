@@ -5,7 +5,6 @@
 #include "settings.h"
 
 #include <Arduino.h>
-#include <WS2812FX.h>
 // #include <FastLED.h>
 
 // #define STAMP_S3_LED_PIN 21
