@@ -36,7 +36,6 @@ https://www.online-utility.org/image/convert/to/XBM
 
 #ifdef MARAUDER_M5STAMP_S3
   #include "stampS3LED.h"
-  #include "LedInterface.h"
 #elif defined(MARAUDER_FLIPPER)
   #include "flipperLED.h"
 #elif defined(XIAO_ESP32_S3)
@@ -123,7 +122,6 @@ CommandLine cli_obj;
 
 #ifdef MARAUDER_M5STAMP_S3
   stampS3LED stamps3_led;
-  LedInterface led_obj;
 #elif defined(MARAUDER_FLIPPER)
   flipperLED flipper_led;
 #elif defined(XIAO_ESP32_S3)
@@ -346,7 +344,6 @@ void setup()
   // Do some LED stuff
   #ifdef MARAUDER_M5STAMP_S3
     stamps3_led.RunSetup();
-    led_obj.RunSetup();
   #elif defined(MARAUDER_FLIPPER)
     flipper_led.RunSetup();
   #elif defined(XIAO_ESP32_S3)
@@ -447,7 +444,6 @@ void loop()
   }
   #ifdef MARAUDER_M5STAMP_S3
     stamps3_led.main();
-    led_obj.main(currentTime);
   #elif defined(MARAUDER_FLIPPER)
     flipper_led.main();
   #elif defined(XIAO_ESP32_S3)
