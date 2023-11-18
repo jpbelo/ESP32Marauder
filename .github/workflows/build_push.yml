@@ -120,12 +120,12 @@ jobs:
           ref: 8.1.0
           path: CustomEspSoftwareSerial
           
-      - name: Install FastLED
+      - name: Install WS2812FX
         uses: actions/checkout@v2
         with:
-          repository: FastLED/FastLED
-          ref: 3.6.0
-          path: FastLED
+          repository: kitesurfer1404/WS2812FX
+          ref: v1.4.2
+          path: WS2812FX
           
       - name: Configure TFT_eSPI
         run: |
